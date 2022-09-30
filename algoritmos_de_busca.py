@@ -25,7 +25,7 @@ def buscaordenada(elem, vet):
         i += 1
     return -1
 
-def buscabinaria(elem, vet):
+def buscabinaria(elem, vet): 
     ordenado = sorted(vet)
     print(ordenado)
     i = 0
