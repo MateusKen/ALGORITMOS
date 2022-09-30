@@ -23,22 +23,23 @@ def imprimeMatriz(M):
 def verificaQuadrado(M):
     somaLinha = 0
     somaColuna = 0
-    i = 0
-    while i < len(M):
-        j = 0
-        while j < len(M):
-            somaLinha = somaLinha+M[i][j]
-            j += 1
-        i +=1
-    if soma  
-arquivo = leArquivo('quadradomagico.txt')
-imprimeMatriz(arquivo)
-arquivo.close()
+    for i in range(len(M)): #para linha
+        for j in range(len(M)):
 
-'''
-EXEMPLO
-3  TAMANHO DO QUADRADO
-8 1 6 1ª LINHA DO QUADRADO
-3 5 7 2ª LINHA DO QUADRADO
-4 9 2 3ª LINHA DO QUADRADO
-'''
+    for i in range(len(M)): #para coluna
+        for j in range(len(M)):
+
+    for i in range(len(M)): #para diagonal
+        for j in range(len(M)):
+
+def main():
+    arquivo = leArquivo('quadradomagico.txt')
+    imprimeMatriz(arquivo)
+    é = verificaQuadrado(arquivo)
+    if not é:
+        print('Não é quadrado mágico')
+    else:
+        print('É quadrado mágico')
+    arquivo.close()
+
+main()
