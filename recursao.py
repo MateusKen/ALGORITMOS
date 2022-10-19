@@ -21,15 +21,20 @@ def fibonacci(n): #sequência de fibonacci
     else:
         return fibonacci(n-1) + fibonacci(n-2)
     
-def buscaBinariaRec(n, lista):
-    if lista[len(lista)//2] < n:
-        return buscaBinariaRec(n, lista[len(lista)//2:])
-    elif len(lista)//2 > n:
-        return buscaBinariaRec(n, lista[:len(lista)//2])
-    elif lista[len(lista)//2] == n:
-        return 'O número está na lista'
+def buscaBinariaRec(elem, vet):
+    ordenado = sorted(vet)
+    i = 0
+    f = len(vet)-1
+    m = (i + f)//2
+    print(ordenado)
+    if ordenado[m] == elem:
+        return elem
+    elif ordenado[m] < elem:
+        return buscaBinariaRec(elem, ordenado[m:])
+    elif ordenado[m] > elem:
+        return buscaBinariaRec(elem, ordenado[:m])
     else:
-        return 'O número não está na lista'
+        return -1
 
 def main():
     lista = [1,2,3,4]
