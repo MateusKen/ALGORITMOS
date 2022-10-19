@@ -36,6 +36,12 @@ def buscaBinariaRec(elem, vet):
     else:
         return -1
 
+def converteDecEmBinario(dec):
+    if dec == 0:
+        return 0
+    q = converteDecEmBinario(dec // 2)
+    return dec%2 + 10*q
+
 def main():
     lista = [1,2,3,4]
 
