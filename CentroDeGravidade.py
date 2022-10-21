@@ -1,5 +1,5 @@
 '''
-NOME: MATEUS KENZO IOCHIMOTO TIA: 32216289 
+NOME: MATEUS KENZO IOCHIMOTO TIA: 32216289
 '''
 def leArquivo(arquivo): #isso da certo
     arq = open(arquivo, 'r')
@@ -23,33 +23,31 @@ def imprimeMatriz(M): #isso da certo
     for i in range(len(M)):
         for j in range(len(M[0])):
             print(' ', M[i][j],' ', end='')
-
         print('\n')
 
 def verificaCentro(M): #isso ainda não da certo (apenas para linhas)
-    indice = 0
-    menor = 10000000
-    for i in range(1,len(M[0])-1): #i que percorre cada linha, menos a primeira e a última     
-        j= 0
-        soma1 = 0
-        soma2 = 0
-        while j < i:
-            soma1 = soma1 + M[i][j]
-            j +=1
-        j = len(M[i])-1
-        while j > i:
-            soma2 = soma2 + M[i][j]
-            j -= 1
-        if menor > (soma1-soma2):
-            menor = soma1-soma2
-            indice = i+2
+    indice = 1
+    menor = 0
+    for i in range(1,len(M[0])-1): #i que percorre cada linha, menos a primeira e a última
+        soma = []
+        for j in range(1,len(M)-1):
+            if i != j:
+                
+                soma += M[j] #soma em uma lista todos os elementos menos o que estiver com o índice
+            print(soma)
+        soma = sum(soma)
+        if i == 1: #para 1ª comparação
+            menor = soma
+        elif soma < menor: 
+            menor = soma
+            indice += i
+            
     return indice
 
 
 def main():
-    arquivo = leArquivo('texto.txt')
+    arquivo = leArquivo('asda.txt')
     imprimeMatriz(arquivo)
-    soma = sum(arquivo[0])
-    print(verificaCentro(arquivo))
+    print('Centro: ', '(', verificaCentro(arquivo),')')
     
 main()
