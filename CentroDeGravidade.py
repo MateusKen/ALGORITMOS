@@ -28,25 +28,26 @@ def imprimeMatriz(M): #isso da certo
 def verificaCentro(M): #isso ainda não da certo (apenas para linhas)
     indice = 1
     menor = 0
-    for i in range(1,len(M[0])-1): #i que percorre cada linha, menos a primeira e a última
+    for i in range(1,len(M)-1): #i que percorre cada linha, menos a primeira e a última
         soma = []
         for j in range(1,len(M)-1):
             if i != j:
-                
+                print(i,j)
                 soma += M[j] #soma em uma lista todos os elementos menos o que estiver com o índice
             print(soma)
         soma = sum(soma)
+        
         if i == 1: #para 1ª comparação
             menor = soma
         elif soma < menor: 
             menor = soma
-            indice += i
+            indice = i+1
             
     return indice
 
 
 def main():
-    arquivo = leArquivo('asda.txt')
+    arquivo = leArquivo('texto.txt')
     imprimeMatriz(arquivo)
     print('Centro: ', '(', verificaCentro(arquivo),')')
     
